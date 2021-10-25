@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercício 13</title>
+    <script language="javascript">
+
+      function verificarTriângulo()
+      
+      { var lado1, lado2, lado3;
+
+          lado1 =parseFloat(document.frmTriangulo.lado1.value);
+          lado2 =parseFloat(document.frmTriangulo.lado2.value);
+          lado3 =parseFloat(document.frmTriangulo.lado3.value);
+
+          if (lado1 == lado2 && lado2 != lado3 ||
+              lado1 == lado3 && lado3 != lado2||
+              lado2 == lado3 && lado3 != lado1)
+        document.getElementById("resultadoTriângulo1").innerHTML = "<h1>Essas medidas formam um triângulo isósceles<br>" + "<img src='img/isosceles.png'width='300'height='200'></h1>";
+
+        else if (lado1 == lado2 && lado2 == lado3)
+        document.getElementById("resultadoTriângulo2").innerHTML = "<h1>Essas medidas formam um triângulo equilatero<br>" + "<img src='img/equilatero.png'width='300'height='200'></h1>";
+        
+        else if (lado1 != lado2!= lado3)
+        document.getElementById("resultadoTriângulo3").innerHTML = "<h1>Essas medidas formam um triângulo escaleno<br>" + "<img src='img/escaleno.png'width='300'height='200'></h1>";
+
+        else
+        document.getElementById("resultadoTriângulo4").innerHTML = "<h1>Essas medidas <b>não</b> formam um triângulo.</h1>";
+      }
+    </script>
+  </head>
+<body>
+    <style>
+       h1{
+       color:crimson;
+       background-color: cornflowerblue;
+    }
+    </style>
+  <form name="frmTriangulo">
+    <h1>Digite 1° lado do triângulo: <input type="number" name="lado1"><br><h1>
+    <h1>Digite 2° lado do triângulo: <input type="number" name="lado2"><br></h1>
+    <h1>Digite 3° lado do triângulo: <input type="number" name="lado3"><br><br></h1>
+    <h1><input type="button" value="verificar o tipo do triângulo" onclick="verificarTriângulo();"></h1>
+    <br><br>
+
+  <p id="resultadoTriângulo1"></p>
+  <p id="resultadoTriângulo2"></p>
+  <p id="resultadoTriângulo3"></p>
+  <p id="resultadoTriângulo4"></p>
+
+  </form>
+</body>
+</html>
